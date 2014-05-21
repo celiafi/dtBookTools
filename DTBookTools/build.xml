@@ -1,0 +1,76 @@
+<project name="DTBookTools">
+	<description>
+		The build file for DTBookTools package.
+	</description>
+
+	<property name="src.dir" location="src" />
+	<property name="build.dir" location="bin" />
+	<property name="lib.dir" location="lib" />
+	<property name="dist.dir" location="dist" />
+	<property name="docs.dir" location="docs" />
+	<property name="oxygen.path" location="lib/oxygen.jar" />
+	<property name="addon.dir" location="../../frameworks/dtbook" />
+
+	<path id="classpath">
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+		<pathelement location="${build.dir}" />
+	</path>
+
+	<target name="init">
+		<record name="build.log" loglevel="verbose" append="false" />
+		<echo message="Starting to build. Log level verbose." />
+		<echo message="ant.java.version: ${ant.java.version}" />
+	</target>
+
+	<target name="clean" depends="init">
+		<echo message="Cleaning..." />
+		<delete dir="${build.dir}" />
+		<delete dir="${dist.dir}" />
+		<delete dir="${docs.dir}" />
+	</target>
+
+	<target name="makedir" depends="init">
+		<echo message="Making directories..." />
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${dist.dir}" />
+		<mkdir dir="${docs.dir}" />
+	</target>
+
+	<target name="compile" depends="clean, makedir, init">
+		<echo message="Compiling..." />
+		<javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false" target="1.6" source="1.6">
+			<classpath refid="classpath" />
+		</javac>
+	</target>
+
+	<target name="docs" depends="compile, init">
+		<echo message="Creating documentation..." />
+		<javadoc packagenames="src" sourcepath="${src.dir}" destdir="${docs.dir}">
+			<!-- Define which files and directories should get included -->
+			<fileset dir="${src.dir}">
+				<include name="**" />
+			</fileset>
+		</javadoc>
+	</target>
+
+	<target name="jar" depends="compile, init">
+		<echo message="Packaging jar..." />
+		<jar destfile="${dist.dir}\dtBookTools.jar" basedir="${build.dir}">
+			<!-- MANIFEST MISSING -->
+		</jar>
+	</target>
+
+	<!-- THIS TARGET IS ONLY FOR DEVELOPMENT PURPOSES AND DEPENDS ON HAVING THE CORRECT DIRECTORY STRUCTURE -->
+	<target name="copy" depends="compile, init, jar">
+		<echo message="Copying jar to addon directory..." />
+		<copy file="${dist.dir}\dtBookTools.jar" tofile="${addon.dir}\dtBookTools.jar" overwrite="true" />		
+	</target>
+
+	<target name="main" depends="compile, jar, copy, docs, init">
+	<echo message="Finishing build" />
+	<description>Main target</description>
+</target>
+
+</project>
