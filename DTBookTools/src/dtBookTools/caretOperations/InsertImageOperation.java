@@ -1,4 +1,4 @@
-package dtBookTools;
+package dtBookTools.caretOperations;
 
 import java.awt.FileDialog;
 import java.awt.GridBagConstraints;
@@ -8,9 +8,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
-import java.io.FilenameFilter;
 import java.net.MalformedURLException;
-import java.net.URISyntaxException;
 import java.net.URL;
 
 import javax.swing.BorderFactory;
@@ -29,6 +27,8 @@ import ro.sync.ecss.extensions.api.ArgumentsMap;
 import ro.sync.ecss.extensions.api.AuthorAccess;
 import ro.sync.ecss.extensions.api.AuthorOperation;
 import ro.sync.ecss.extensions.api.AuthorOperationException;
+
+import dtBookTools.common.Constants;
 
 public class InsertImageOperation implements
 		ro.sync.ecss.extensions.api.AuthorOperation {
@@ -61,7 +61,7 @@ public class InsertImageOperation implements
 		href = fd.getFile();
 
 		if (href.length() != 0) {
-			String imageFragment = "<img xmlns='http://www.daisy.org/z3986/2005/dtbook/' src='"
+			String imageFragment = "<img xmlns=" + Constants.XMLNS + " src='"
 					+ href + "' alt=''/>";
 			int caretPosition = authorAccess.getEditorAccess().getCaretOffset();
 			authorAccess.insertXMLFragment(imageFragment, caretPosition);
