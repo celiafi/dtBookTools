@@ -9,7 +9,7 @@
 	<property name="dist.dir" location="dist" />
 	<property name="docs.dir" location="docs" />
 	<property name="oxygen.path" location="lib/oxygen.jar" />
-	<property name="addon.dir" location="../../frameworks/dtbook" />
+	<property name="addon.dir" location="C:\Program Files\Oxygen XML Editor 15\frameworks\dtbook" />
 
 	<path id="classpath">
 		<fileset dir="${lib.dir}">
