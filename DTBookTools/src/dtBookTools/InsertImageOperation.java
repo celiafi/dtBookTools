@@ -8,7 +8,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
+import java.io.FilenameFilter;
 import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.net.URL;
 
 import javax.swing.BorderFactory;
@@ -31,7 +33,6 @@ import ro.sync.ecss.extensions.api.AuthorOperationException;
 public class InsertImageOperation implements
 		ro.sync.ecss.extensions.api.AuthorOperation {
 
-	
 	@Override
 	public String getDescription() {
 		String description = "Insert image pop-up operation";
@@ -41,47 +42,44 @@ public class InsertImageOperation implements
 	@Override
 	public void doOperation(AuthorAccess authorAccess, ArgumentsMap arguments)
 			throws IllegalArgumentException, AuthorOperationException {
-		
+
 		JFrame oxygenFrame = (JFrame) authorAccess.getWorkspaceAccess()
 				.getParentFrame();
-		String href = "";
-		
-		URL currentLocation = authorAccess.getEditorAccess().getEditorLocation();
+		String href = "you shouldn't see this";
+
+		URL currentLocation = authorAccess.getEditorAccess()
+				.getEditorLocation();
 		String loc = currentLocation.getPath();
-		
-		//JFileChooser fc = new JFileChooser(loc);
-		//fc.setFileView(new ThumbnailFileView());
-		//int returnVal = fc.showOpenDialog(oxygenFrame);
-		
-		//if(returnVal == JFileChooser.APPROVE_OPTION){
-		//	File selectedFile = fc.getSelectedFile();
-		//	href = selectedFile.getName();
-		//}
-		
-		FileDialog fd = new FileDialog(oxygenFrame, "Test", FileDialog.LOAD);
+
+
+		loc = loc.replace("/", "\\");
+
+		FileDialog fd = new FileDialog(oxygenFrame, "test", FileDialog.LOAD);
 		fd.setDirectory(loc);
 		fd.setVisible(true);
-		href = fd.getName();
 		
+		href = fd.getFile();
+
 		if (href.length() != 0) {
-			String imageFragment = 
-					"<img xmlns='http://www.daisy.org/z3986/2005/dtbook/' src='" + href + "' alt=''/>";
+			String imageFragment = "<img xmlns='http://www.daisy.org/z3986/2005/dtbook/' src='"
+					+ href + "' alt=''/>";
 			int caretPosition = authorAccess.getEditorAccess().getCaretOffset();
 			authorAccess.insertXMLFragment(imageFragment, caretPosition);
 		}
 
 	}
-	
-	class ThumbnailFileView extends FileView{
-		
-		
+
+	class ThumbnailFileView extends FileView {
+
 	}
 
 	@Override
 	public ArgumentDescriptor[] getArguments() {
 		ArgumentDescriptor[] argumentDescriptor = new ArgumentDescriptor[2];
-		argumentDescriptor[0] = new ArgumentDescriptor("arg1", 0, "authorAccess");
-		argumentDescriptor[1] = new ArgumentDescriptor("arg2", 0, "argumentsMap");
+		argumentDescriptor[0] = new ArgumentDescriptor("arg1", 0,
+				"authorAccess");
+		argumentDescriptor[1] = new ArgumentDescriptor("arg2", 0,
+				"argumentsMap");
 		return argumentDescriptor;
 	}
 
