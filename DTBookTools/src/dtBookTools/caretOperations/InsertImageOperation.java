@@ -63,7 +63,7 @@ public class InsertImageOperation implements
 		href = fd.getFile();
 
 		if (href != null) {
-			String imageFragment = "<img xmlns=" + Constants.XMLNS + " src='"
+			String imageFragment = "<img xmlns='" + Constants.XMLNS + "' src='"
 					+ href + "' alt=''/>";
 			int caretPosition = authorAccess.getEditorAccess().getCaretOffset();
 			authorAccess.insertXMLFragment(imageFragment, caretPosition);
