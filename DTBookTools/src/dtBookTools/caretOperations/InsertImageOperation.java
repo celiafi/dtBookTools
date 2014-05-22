@@ -72,9 +72,6 @@ public class InsertImageOperation implements
 
 	}
 
-	class ThumbnailFileView extends FileView {
-
-	}
 
 	@Override
 	public ArgumentDescriptor[] getArguments() {
