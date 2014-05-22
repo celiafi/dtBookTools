@@ -50,14 +50,15 @@ public class InsertImageOperation implements
 		URL currentLocation = authorAccess.getEditorAccess()
 				.getEditorLocation();
 		String loc = currentLocation.getPath();
+		assert (loc != null);
 		
 		//TODO use file separators instead of characters
-		//TODO add null checks etc
+		//TODO verify assertions
 		if(loc.charAt(0) == '/')loc = loc.substring(1);	
 		loc = loc.substring(0, loc.lastIndexOf('/')+1);
 		loc = loc.replace("/", "\\");
 
-		FileDialog fd = new FileDialog(oxygenFrame, "test", FileDialog.LOAD);
+		FileDialog fd = new FileDialog(oxygenFrame, "Insert image", FileDialog.LOAD);
 		fd.setDirectory(loc);
 		fd.setVisible(true);
 		href = fd.getFile();
