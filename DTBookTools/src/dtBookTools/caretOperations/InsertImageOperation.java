@@ -29,6 +29,7 @@ import ro.sync.ecss.extensions.api.AuthorAccess;
 import ro.sync.ecss.extensions.api.AuthorOperation;
 import ro.sync.ecss.extensions.api.AuthorOperationException;
 import dtBookTools.common.Constants;
+import dtBookTools.common.XMLFragmentCreator;
 
 public class InsertImageOperation implements
 		ro.sync.ecss.extensions.api.AuthorOperation {
@@ -64,8 +65,8 @@ public class InsertImageOperation implements
 		href = fd.getFile();
 
 		if (href != null) {
-			String imageFragment = "<img xmlns='" + Constants.XMLNS + "' src='"
-					+ href + "' alt=''/>";
+			String imageFragment = XMLFragmentCreator.createImageFragment(href);
+			
 			int caretPosition = authorAccess.getEditorAccess().getCaretOffset();
 			authorAccess.insertXMLFragment(imageFragment, caretPosition);
 		}
@@ -76,9 +77,9 @@ public class InsertImageOperation implements
 	@Override
 	public ArgumentDescriptor[] getArguments() {
 		ArgumentDescriptor[] argumentDescriptor = new ArgumentDescriptor[2];
-		argumentDescriptor[0] = new ArgumentDescriptor("arg1", 0,
+		argumentDescriptor[0] = new ArgumentDescriptor("arg0", 0,
 				"authorAccess");
-		argumentDescriptor[1] = new ArgumentDescriptor("arg2", 0,
+		argumentDescriptor[1] = new ArgumentDescriptor("arg1", 0,
 				"argumentsMap");
 		return argumentDescriptor;
 	}
