@@ -17,6 +17,7 @@ import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.filechooser.FileFilter;
@@ -27,7 +28,6 @@ import ro.sync.ecss.extensions.api.ArgumentsMap;
 import ro.sync.ecss.extensions.api.AuthorAccess;
 import ro.sync.ecss.extensions.api.AuthorOperation;
 import ro.sync.ecss.extensions.api.AuthorOperationException;
-
 import dtBookTools.common.Constants;
 
 public class InsertImageOperation implements
@@ -45,22 +45,24 @@ public class InsertImageOperation implements
 
 		JFrame oxygenFrame = (JFrame) authorAccess.getWorkspaceAccess()
 				.getParentFrame();
-		String href = "you shouldn't see this";
+		String href;
 
 		URL currentLocation = authorAccess.getEditorAccess()
 				.getEditorLocation();
 		String loc = currentLocation.getPath();
-
-
+		
+		//TODO use file separators instead of characters
+		//TODO add null checks etc
+		if(loc.charAt(0) == '/')loc = loc.substring(1);	
+		loc = loc.substring(0, loc.lastIndexOf('/')+1);
 		loc = loc.replace("/", "\\");
 
 		FileDialog fd = new FileDialog(oxygenFrame, "test", FileDialog.LOAD);
 		fd.setDirectory(loc);
 		fd.setVisible(true);
-		
 		href = fd.getFile();
 
-		if (href.length() != 0) {
+		if (href != null) {
 			String imageFragment = "<img xmlns=" + Constants.XMLNS + " src='"
 					+ href + "' alt=''/>";
 			int caretPosition = authorAccess.getEditorAccess().getCaretOffset();
