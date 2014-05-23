@@ -31,15 +31,22 @@ import ro.sync.ecss.extensions.api.AuthorOperationException;
 import dtBookTools.common.Constants;
 import dtBookTools.common.XMLFragmentCreator;
 
+/**
+ * Open file dialog and create an image xml fragment corresponding to the file.
+ * 
+ * @author jukkae
+ * 
+ */
 public class InsertImageOperation implements
 		ro.sync.ecss.extensions.api.AuthorOperation {
 
-	@Override
-	public String getDescription() {
-		String description = "Insert image pop-up operation";
-		return description;
-	}
-
+	/**
+	 * Execute the operation.
+	 * @param authorAccess from Oxygen
+	 * @param arguments from Oxygen
+	 * @throws IllegalArgumentException when called with illegal ArgumentsMap
+	 * @throws AuthorOperationException if things go awry
+	 */
 	@Override
 	public void doOperation(AuthorAccess authorAccess, ArgumentsMap arguments)
 			throws IllegalArgumentException, AuthorOperationException {
@@ -52,28 +59,42 @@ public class InsertImageOperation implements
 				.getEditorLocation();
 		String loc = currentLocation.getPath();
 		assert (loc != null);
-		
-		//TODO use file separators instead of characters
-		//TODO verify assertions
-		if(loc.charAt(0) == '/')loc = loc.substring(1);	
-		loc = loc.substring(0, loc.lastIndexOf('/')+1);
+
+		// TODO use file separators instead of characters
+		// File.separator is somewhat problematic and introduces bugs
+		// TODO get rid of assert, enterprisify this
+		if (loc.charAt(0) == '/')
+			loc = loc.substring(1);
+		loc = loc.substring(0, loc.lastIndexOf('/') + 1);
 		loc = loc.replace("/", "\\");
 
-		FileDialog fd = new FileDialog(oxygenFrame, "Insert image", FileDialog.LOAD);
+		FileDialog fd = new FileDialog(oxygenFrame, "Insert image",
+				FileDialog.LOAD);
 		fd.setDirectory(loc);
 		fd.setVisible(true);
 		href = fd.getFile();
 
 		if (href != null) {
 			String imageFragment = XMLFragmentCreator.createImageFragment(href);
-			
+
 			int caretPosition = authorAccess.getEditorAccess().getCaretOffset();
 			authorAccess.insertXMLFragment(imageFragment, caretPosition);
 		}
 
 	}
 
+	/**
+	 * Descriptor getter for Oxygen
+	 */
+	@Override
+	public String getDescription() {
+		String description = "Insert image pop-up operation";
+		return description;
+	}
 
+	/**
+	 * Argument descriptor for Oxygen
+	 */
 	@Override
 	public ArgumentDescriptor[] getArguments() {
 		ArgumentDescriptor[] argumentDescriptor = new ArgumentDescriptor[2];
@@ -84,5 +105,4 @@ public class InsertImageOperation implements
 		return argumentDescriptor;
 	}
 
-	
 }
