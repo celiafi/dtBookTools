@@ -1,34 +1,14 @@
 package dtBookTools.caretOperations;
 
 import java.awt.FileDialog;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.io.File;
-import java.net.MalformedURLException;
 import java.net.URL;
 
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.JDialog;
-import javax.swing.JFileChooser;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.filechooser.FileFilter;
-import javax.swing.filechooser.FileView;
 
 import ro.sync.ecss.extensions.api.ArgumentDescriptor;
 import ro.sync.ecss.extensions.api.ArgumentsMap;
 import ro.sync.ecss.extensions.api.AuthorAccess;
-import ro.sync.ecss.extensions.api.AuthorOperation;
 import ro.sync.ecss.extensions.api.AuthorOperationException;
-import dtBookTools.common.Constants;
 import dtBookTools.common.XMLFragmentCreator;
 
 /**
@@ -47,6 +27,7 @@ public class InsertImageOperation implements
 	 * @throws IllegalArgumentException when called with illegal ArgumentsMap
 	 * @throws AuthorOperationException if things go awry
 	 */
+	@SuppressWarnings("deprecation")
 	@Override
 	public void doOperation(AuthorAccess authorAccess, ArgumentsMap arguments)
 			throws IllegalArgumentException, AuthorOperationException {
@@ -60,9 +41,6 @@ public class InsertImageOperation implements
 		String loc = currentLocation.getPath();
 		assert (loc != null);
 
-		// TODO use file separators instead of characters
-		// File.separator is somewhat problematic and introduces bugs
-		// TODO get rid of assert, enterprisify this
 		if (loc.charAt(0) == '/')
 			loc = loc.substring(1);
 		loc = loc.substring(0, loc.lastIndexOf('/') + 1);
