@@ -39,8 +39,8 @@ public class InsertImageOperation implements
 		URL currentLocation = authorAccess.getEditorAccess()
 				.getEditorLocation();
 		String loc = currentLocation.getPath();
-		assert (loc != null);
 
+		// Windows-only!
 		if (loc.charAt(0) == '/')
 			loc = loc.substring(1);
 		loc = loc.substring(0, loc.lastIndexOf('/') + 1);
