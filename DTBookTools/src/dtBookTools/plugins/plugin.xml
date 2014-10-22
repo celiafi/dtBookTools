@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plugin SYSTEM "../plugin.dtd">
+<plugin
+	name="AutoLinebreak"
+	description="Automatically break lines."
+	version="0.0.0"
+	vendor="???"
+	class="dtBookTools.plugins.AutoLinebreak">
+	<runtime>
+		<library name="lib/autoLinebreak.jar"/>
+	</runtime>
+	<extension type="documentProcessor"
+		class="dtBookTools.plugins.AutoLinebreakExtension"
+		keyboardShortcut="ctrl shift EQUALS"/>
+</plugin>

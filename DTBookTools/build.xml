@@ -10,6 +10,7 @@
 	<property name="docs.dir" location="docs" />
 	<property name="oxygen.path" location="lib/oxygen.jar" />
 	<property name="addon.dir" location="C:\Program Files\Oxygen XML Editor 15\frameworks\dtbook-3" />
+	<property name="plugin.dir" location="C:\Program Files\Oxygen XML Editor 15\plugins" />
 
 	<path id="classpath">
 		<fileset dir="${lib.dir}">
@@ -40,9 +41,44 @@
 
 	<target name="compile" depends="clean, makedir, init">
 		<echo message="Compiling..." />
-		<javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false" target="1.6" source="1.6">
+		<javac destdir="${build.dir}" includeantruntime="false" target="1.6" source="1.6">
+			<src path="${src.dir}" />
+			<!-- Exclude plugins and binded java classes, only compile the framework -->
+			<exclude name="**/plugins/**" />
+			<exclude name="**/binded/**" />
 			<classpath refid="classpath" />
 		</javac>
+	</target>
+
+	<target name="compilePlugins" depends="clean, makedir, init">
+		<echo message="Compiling plug-ins..." />
+		<javac destdir="${build.dir}" includeantruntime="false" target="1.6" source="1.6">
+			<src path="${src.dir}/dtBookTools/plugins" />
+			<classpath refid="classpath" />
+		</javac>
+	</target>
+
+	<!-- THIS TARGET IS ONLY FOR DEVELOPMENT PURPOSES AND DEPENDS ON HAVING THE CORRECT DIRECTORY STRUCTURE -->
+	<target name="copyPlugins" depends="compilePlugins">
+		<!-- Copy plugin classes -->
+		<echo message="Copy plug-ins to plug-in directory" />
+		<copy todir="${plugin.dir}/AutoLinebreak">
+			<fileset dir="${build.dir}/dtBookTools/plugins" />
+		</copy>
+		<!-- Copy plugin descriptor -->
+		<echo message="Copy plug-in descriptor to plug-in directory" />
+		<copy todir="${plugin.dir}/AutoLinebreak" flatten="true">
+			<fileset dir="${src.dir}/">
+				<include name="**/plugin.xml"/>
+			</fileset>
+		</copy>
+	</target>
+	
+	<target name="jarPlugins" depends="compilePlugins">
+		<echo message="Packaging plug-in jar..."/>
+		<jar destfile="${plugin.dir}/AutoLinebreak/autoLinebreak.jar" basedir="${build.dir}">
+			<!-- MANIFEST MISSING -->
+		</jar>
 	</target>
 
 	<target name="docs" depends="compile, init">
@@ -65,12 +101,12 @@
 	<!-- THIS TARGET IS ONLY FOR DEVELOPMENT PURPOSES AND DEPENDS ON HAVING THE CORRECT DIRECTORY STRUCTURE -->
 	<target name="copy" depends="compile, init, jar">
 		<echo message="Copying jar to addon directory..." />
-		<copy file="${dist.dir}\dtBookTools.jar" tofile="${addon.dir}\dtBookTools.jar" overwrite="true" />		
+		<copy file="${dist.dir}\dtBookTools.jar" tofile="${addon.dir}\dtBookTools.jar" overwrite="true" />
 	</target>
 
-	<target name="main" depends="compile, jar, copy, docs, init">
-	<echo message="Finishing build" />
-	<description>Main target</description>
-</target>
+	<target name="main" depends="compile, compilePlugins, jar, copy, copyPlugins, jarPlugins, docs, init">
+		<echo message="Finishing build" />
+		<description>Main target</description>
+	</target>
 
 </project>
