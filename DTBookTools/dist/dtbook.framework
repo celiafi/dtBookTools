@@ -1,0 +1,1553 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serialized version="15.1" xml:space="preserve">
+	<map>
+		<entry>
+			<String>document.types</String>
+			<documentTypeDescriptor-array>
+				<documentTypeDescriptor>
+					<field name="name">
+						<String>DTBook</String>
+					</field>
+					<field name="schemaDescriptor">
+						<docTypeSchema>
+							<field name="type">
+								<Integer>1</Integer>
+							</field>
+							<field name="uri">
+								<String>http://www.daisy.org/z3986/2005/dtbook-2005-3.dtd</String>
+							</field>
+						</docTypeSchema>
+					</field>
+					<field name="classpath">
+						<String-array>
+							<String>${framework}/dtBookTools.jar</String>
+						</String-array>
+					</field>
+					<field name="parentClassLoaderID">
+						<null/>
+					</field>
+					<field name="authorExtensionDescriptor">
+						<authorExtension>
+							<field name="cssDescriptors">
+								<cssFile-array>
+									<cssFile>
+										<field name="href">
+											<String>${framework}/dtbook/sass/dtbook.css</String>
+										</field>
+										<field name="title">
+											<String>local</String>
+										</field>
+										<field name="alternate">
+											<Boolean>false</Boolean>
+										</field>
+									</cssFile>
+								</cssFile-array>
+							</field>
+							<field name="mergeCSSsFromDocument">
+								<Boolean>false</Boolean>
+							</field>
+							<field name="actionDescriptors">
+								<action-array>
+									<action>
+										<field name="id">
+											<String>class_johdanto</String>
+										</field>
+										<field name="name">
+											<String>Set class="johdanto"</String>
+										</field>
+										<field name="description">
+											<String>Sets element's attribute class to "johdanto"</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String>j</String>
+										</field>
+										<field name="accelerator">
+											<String>ctrl shift J</String>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>local-name()='p' or local-name()='linegroup'</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>name</String>
+																<String>class</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>johdanto</String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>remove_class</String>
+										</field>
+										<field name="name">
+											<String>Remove class</String>
+										</field>
+										<field name="description">
+											<String>Removes attribute 'class' from the element.</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String>r</String>
+										</field>
+										<field name="accelerator">
+											<String>ctrl shift R</String>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String></String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>name</String>
+																<String>class</String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>class_precedingemptyline</String>
+										</field>
+										<field name="name">
+											<String>Set class="precedingemptyline"</String>
+										</field>
+										<field name="description">
+											<String>Sets element's attribute class to "precedingemptyline"</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String>p</String>
+										</field>
+										<field name="accelerator">
+											<String>ctrl shift P</String>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String></String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>name</String>
+																<String>class</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>precedingemptyline</String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>surround_with_div</String>
+										</field>
+										<field name="name">
+											<String>Surround with &lt;div></String>
+										</field>
+										<field name="description">
+											<String>Surround selected content with &lt;div>&lt;/div> tags. If no content selected, insert an empty div.</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String>d</String>
+										</field>
+										<field name="accelerator">
+											<String>ctrl shift D</String>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String></String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;div xmlns="http://www.daisy.org/z3986/2005/dtbook/">&lt;/div></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.SurroundWithFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>unwrap</String>
+										</field>
+										<field name="name">
+											<String>Unwrap</String>
+										</field>
+										<field name="description">
+											<String>Remove closest surrounding tags.</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String>u</String>
+										</field>
+										<field name="accelerator">
+											<String>ctrl shift U</String>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String></String>
+													</field>
+													<field name="argValues">
+														<map/>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.UnwrapTagsOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>insert_image</String>
+										</field>
+										<field name="name">
+											<String>Insert image</String>
+										</field>
+										<field name="description">
+											<String>Insert image</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String>i</String>
+										</field>
+										<field name="accelerator">
+											<String>ctrl shift I</String>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String></String>
+													</field>
+													<field name="argValues">
+														<map/>
+													</field>
+													<field name="operationID">
+														<String>dtBookTools.caretOperations.InsertImageOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>class_pohja2</String>
+										</field>
+										<field name="name">
+											<String>Set class="pohja2"</String>
+										</field>
+										<field name="description">
+											<String>Sets element's attribute class to "pohja2"</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<String>alt shift 2</String>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>local-name()='div' or local-name()='level2' or local-name()='level3' or local-name()='level4' or local-name()='level5' or local-name()='p' or local-name()='linegroup'</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>name</String>
+																<String>class</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>pohja2</String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>class_pohja3</String>
+										</field>
+										<field name="name">
+											<String>Set class="pohja3"</String>
+										</field>
+										<field name="description">
+											<String>Sets element's attribute class to "pohja3"</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<String>alt shift 3</String>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>local-name()='div' or local-name()='level2' or local-name()='level3' or local-name()='level4' or local-name()='level5' or local-name()='p' or local-name()='linegroup'</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>name</String>
+																<String>class</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>pohja3</String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>class_laatikko1</String>
+										</field>
+										<field name="name">
+											<String>Set class="laatikko1"</String>
+										</field>
+										<field name="description">
+											<String>Sets element's attribute class to "laatikko1"</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String>1</String>
+										</field>
+										<field name="accelerator">
+											<String>ctrl 1</String>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>local-name()='div' or local-name()='level2' or local-name()='level3' or local-name()='level4' or local-name()='level5' or local-name()='p' or local-name()='linegroup'</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>name</String>
+																<String>class</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>laatikko1</String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>class_laatikko2</String>
+										</field>
+										<field name="name">
+											<String>Set class="laatikko2"</String>
+										</field>
+										<field name="description">
+											<String>Sets element's attribute class to "laatikko2"</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String>2</String>
+										</field>
+										<field name="accelerator">
+											<String>ctrl 2</String>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>local-name()='div' or local-name()='level2' or local-name()='level3' or local-name()='level4' or local-name()='level5' or local-name()='p' or local-name()='linegroup'</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>name</String>
+																<String>class</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>laatikko2</String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>class_laatikko3</String>
+										</field>
+										<field name="name">
+											<String>Set class="laatikko3"</String>
+										</field>
+										<field name="description">
+											<String>Sets element's attribute class to "laatikko3"</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String>3</String>
+										</field>
+										<field name="accelerator">
+											<String>ctrl 3</String>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>local-name()='div' or local-name()='level2' or local-name()='level3' or local-name()='level4' or local-name()='level5' or local-name()='p' or local-name()='linegroup'</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>name</String>
+																<String>class</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>laatikko3</String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>class_otsikko</String>
+										</field>
+										<field name="name">
+											<String>Set class="otsikko"</String>
+										</field>
+										<field name="description">
+											<String>Sets element's attribute class to "otsikko"</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String>o</String>
+										</field>
+										<field name="accelerator">
+											<String>ctrl shift O</String>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>local-name()='p'</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>name</String>
+																<String>class</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>otsikko</String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>surround_with_prodnote</String>
+										</field>
+										<field name="name">
+											<String>Surround with &lt;prodnote></String>
+										</field>
+										<field name="description">
+											<String>Surround selected content with &lt;prodnote>&lt;/prodnote> tags. If no content selected, insert an empty prodnote.</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String>p</String>
+										</field>
+										<field name="accelerator">
+											<String>ctrl shift P</String>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String></String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;prodnote xmlns="http://www.daisy.org/z3986/2005/dtbook/">&lt;/prodnote></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.SurroundWithFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>add_imggroup</String>
+										</field>
+										<field name="name">
+											<String>Add &lt;imggroup></String>
+										</field>
+										<field name="description">
+											<String>Insert an empty imggroup. If content is selected, surround with imggroup tags.</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String>g</String>
+										</field>
+										<field name="accelerator">
+											<String>ctrl shift G</String>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String></String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;imggroup xmlns="http://www.daisy.org/z3986/2005/dtbook/">&lt;/imggroup></String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.SurroundWithFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>class_kehys1</String>
+										</field>
+										<field name="name">
+											<String>Set class="kehys1"</String>
+										</field>
+										<field name="description">
+											<String>Sets element's attribute class to "kehys1"</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String>1</String>
+										</field>
+										<field name="accelerator">
+											<String>ctrl shift 1</String>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>local-name()='div' or local-name()='level2' or local-name()='level3' or local-name()='level4' or local-name()='level5' or local-name()='p' or local-name()='linegroup'</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>name</String>
+																<String>class</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>kehys1</String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>class_kehys2</String>
+										</field>
+										<field name="name">
+											<String>Set class="kehys2"</String>
+										</field>
+										<field name="description">
+											<String>Sets element's attribute class to "kehys2"</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String>2</String>
+										</field>
+										<field name="accelerator">
+											<String>ctrl shift 2</String>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>local-name()='div' or local-name()='level2' or local-name()='level3' or local-name()='level4' or local-name()='level5' or local-name()='p' or local-name()='linegroup'</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>name</String>
+																<String>class</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>kehys2</String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>class_kehys3</String>
+										</field>
+										<field name="name">
+											<String>Set class="kehys3"</String>
+										</field>
+										<field name="description">
+											<String>Sets element's attribute class to "kehys3"</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String>3</String>
+										</field>
+										<field name="accelerator">
+											<String>ctrl shift 3</String>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>local-name()='div' or local-name()='level2' or local-name()='level3' or local-name()='level4' or local-name()='level5' or local-name()='p' or local-name()='linegroup'</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>name</String>
+																<String>class</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>kehys3</String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>insert_pagenum</String>
+										</field>
+										<field name="name">
+											<String>Insert page number</String>
+										</field>
+										<field name="description">
+											<String>Insert page number</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String>p</String>
+										</field>
+										<field name="accelerator">
+											<String>ctrl shift P</String>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String></String>
+													</field>
+													<field name="argValues">
+														<map/>
+													</field>
+													<field name="operationID">
+														<String>dtBookTools.caretOperations.InsertPagenumOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>class_pohja1</String>
+										</field>
+										<field name="name">
+											<String>Set class="pohja1"</String>
+										</field>
+										<field name="description">
+											<String>Sets element's attribute class to "pohja1"</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<String>alt shift 1</String>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>local-name()='div' or local-name()='level2' or local-name()='level3' or local-name()='level4' or local-name()='level5' or local-name()='p' or local-name()='linegroup'</String>
+													</field>
+													<field name="argValues">
+														<map>
+															<entry>
+																<String>name</String>
+																<String>class</String>
+															</entry>
+															<entry>
+																<String>value</String>
+																<String>pohja1</String>
+															</entry>
+														</map>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+								</action-array>
+							</field>
+							<field name="menubarDescriptor">
+								<menu>
+									<field name="label">
+										<String>DTBook</String>
+									</field>
+									<field name="accessKey">
+										<String>D</String>
+									</field>
+									<field name="iconPath">
+										<String></String>
+									</field>
+									<field name="menuEntriesDescriptorList">
+										<menuEntry-array>
+											<menu>
+												<field name="label">
+													<String>Set class</String>
+												</field>
+												<field name="accessKey">
+													<String>c</String>
+												</field>
+												<field name="iconPath">
+													<String></String>
+												</field>
+												<field name="menuEntriesDescriptorList">
+													<menuEntry-array>
+														<menuItem>
+															<field name="actionID">
+																<String>remove_class</String>
+															</field>
+														</menuItem>
+														<menuSeparator/>
+														<menuItem>
+															<field name="actionID">
+																<String>class_johdanto</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
+																<String>class_otsikko</String>
+															</field>
+														</menuItem>
+														<menu>
+															<field name="label">
+																<String>pohja</String>
+															</field>
+															<field name="accessKey">
+																<String>p</String>
+															</field>
+															<field name="iconPath">
+																<String></String>
+															</field>
+															<field name="menuEntriesDescriptorList">
+																<menuEntry-array>
+																	<menuItem>
+																		<field name="actionID">
+																			<String>class_pohja1</String>
+																		</field>
+																	</menuItem>
+																	<menuItem>
+																		<field name="actionID">
+																			<String>class_pohja2</String>
+																		</field>
+																	</menuItem>
+																	<menuItem>
+																		<field name="actionID">
+																			<String>class_pohja3</String>
+																		</field>
+																	</menuItem>
+																</menuEntry-array>
+															</field>
+														</menu>
+														<menu>
+															<field name="label">
+																<String>kehys</String>
+															</field>
+															<field name="accessKey">
+																<String>k</String>
+															</field>
+															<field name="iconPath">
+																<String></String>
+															</field>
+															<field name="menuEntriesDescriptorList">
+																<menuEntry-array>
+																	<menuItem>
+																		<field name="actionID">
+																			<String>class_kehys1</String>
+																		</field>
+																	</menuItem>
+																	<menuItem>
+																		<field name="actionID">
+																			<String>class_kehys2</String>
+																		</field>
+																	</menuItem>
+																	<menuItem>
+																		<field name="actionID">
+																			<String>class_kehys3</String>
+																		</field>
+																	</menuItem>
+																</menuEntry-array>
+															</field>
+														</menu>
+														<menu>
+															<field name="label">
+																<String>laatikko</String>
+															</field>
+															<field name="accessKey">
+																<String>a</String>
+															</field>
+															<field name="iconPath">
+																<String></String>
+															</field>
+															<field name="menuEntriesDescriptorList">
+																<menuEntry-array>
+																	<menuItem>
+																		<field name="actionID">
+																			<String>class_laatikko1</String>
+																		</field>
+																	</menuItem>
+																	<menuItem>
+																		<field name="actionID">
+																			<String>class_laatikko2</String>
+																		</field>
+																	</menuItem>
+																	<menuItem>
+																		<field name="actionID">
+																			<String>class_laatikko3</String>
+																		</field>
+																	</menuItem>
+																</menuEntry-array>
+															</field>
+														</menu>
+														<menu>
+															<field name="label">
+																<String>header</String>
+															</field>
+															<field name="accessKey">
+																<String>h</String>
+															</field>
+															<field name="iconPath">
+																<String></String>
+															</field>
+															<field name="menuEntriesDescriptorList">
+																<menuEntry-array/>
+															</field>
+														</menu>
+													</menuEntry-array>
+												</field>
+											</menu>
+											<menu>
+												<field name="label">
+													<String>Wrap / unwrap</String>
+												</field>
+												<field name="accessKey">
+													<String>w</String>
+												</field>
+												<field name="iconPath">
+													<String></String>
+												</field>
+												<field name="menuEntriesDescriptorList">
+													<menuEntry-array>
+														<menuItem>
+															<field name="actionID">
+																<String>unwrap</String>
+															</field>
+														</menuItem>
+														<menuSeparator/>
+														<menuItem>
+															<field name="actionID">
+																<String>surround_with_div</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
+																<String>surround_with_prodnote</String>
+															</field>
+														</menuItem>
+													</menuEntry-array>
+												</field>
+											</menu>
+											<menu>
+												<field name="label">
+													<String>Insert</String>
+												</field>
+												<field name="accessKey">
+													<String>i</String>
+												</field>
+												<field name="iconPath">
+													<String></String>
+												</field>
+												<field name="menuEntriesDescriptorList">
+													<menuEntry-array>
+														<menuItem>
+															<field name="actionID">
+																<String>add_imggroup</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
+																<String>insert_image</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
+																<String>insert_pagenum</String>
+															</field>
+														</menuItem>
+													</menuEntry-array>
+												</field>
+											</menu>
+										</menuEntry-array>
+									</field>
+								</menu>
+							</field>
+							<field name="popupMenuDescriptor">
+								<menu>
+									<field name="label">
+										<String>Contextual menu</String>
+									</field>
+									<field name="accessKey">
+										<null/>
+									</field>
+									<field name="iconPath">
+										<null/>
+									</field>
+									<field name="menuEntriesDescriptorList">
+										<menuEntry-array>
+											<menu>
+												<field name="label">
+													<String>Set class</String>
+												</field>
+												<field name="accessKey">
+													<String>c</String>
+												</field>
+												<field name="iconPath">
+													<String></String>
+												</field>
+												<field name="menuEntriesDescriptorList">
+													<menuEntry-array>
+														<menuItem>
+															<field name="actionID">
+																<String>remove_class</String>
+															</field>
+														</menuItem>
+														<menuSeparator/>
+														<menuItem>
+															<field name="actionID">
+																<String>class_johdanto</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
+																<String>class_otsikko</String>
+															</field>
+														</menuItem>
+														<menu>
+															<field name="label">
+																<String>pohja</String>
+															</field>
+															<field name="accessKey">
+																<String>p</String>
+															</field>
+															<field name="iconPath">
+																<String></String>
+															</field>
+															<field name="menuEntriesDescriptorList">
+																<menuEntry-array>
+																	<menuItem>
+																		<field name="actionID">
+																			<String>class_pohja1</String>
+																		</field>
+																	</menuItem>
+																	<menuItem>
+																		<field name="actionID">
+																			<String>class_pohja2</String>
+																		</field>
+																	</menuItem>
+																	<menuItem>
+																		<field name="actionID">
+																			<String>class_pohja3</String>
+																		</field>
+																	</menuItem>
+																</menuEntry-array>
+															</field>
+														</menu>
+														<menu>
+															<field name="label">
+																<String>kehys</String>
+															</field>
+															<field name="accessKey">
+																<String>k</String>
+															</field>
+															<field name="iconPath">
+																<String></String>
+															</field>
+															<field name="menuEntriesDescriptorList">
+																<menuEntry-array>
+																	<menuItem>
+																		<field name="actionID">
+																			<String>class_kehys1</String>
+																		</field>
+																	</menuItem>
+																	<menuItem>
+																		<field name="actionID">
+																			<String>class_kehys2</String>
+																		</field>
+																	</menuItem>
+																	<menuItem>
+																		<field name="actionID">
+																			<String>class_kehys3</String>
+																		</field>
+																	</menuItem>
+																</menuEntry-array>
+															</field>
+														</menu>
+														<menu>
+															<field name="label">
+																<String>laatikko</String>
+															</field>
+															<field name="accessKey">
+																<String>a</String>
+															</field>
+															<field name="iconPath">
+																<String></String>
+															</field>
+															<field name="menuEntriesDescriptorList">
+																<menuEntry-array>
+																	<menuItem>
+																		<field name="actionID">
+																			<String>class_laatikko1</String>
+																		</field>
+																	</menuItem>
+																	<menuItem>
+																		<field name="actionID">
+																			<String>class_laatikko2</String>
+																		</field>
+																	</menuItem>
+																	<menuItem>
+																		<field name="actionID">
+																			<String>class_laatikko3</String>
+																		</field>
+																	</menuItem>
+																</menuEntry-array>
+															</field>
+														</menu>
+														<menu>
+															<field name="label">
+																<String>header</String>
+															</field>
+															<field name="accessKey">
+																<String>h</String>
+															</field>
+															<field name="iconPath">
+																<String></String>
+															</field>
+															<field name="menuEntriesDescriptorList">
+																<menuEntry-array/>
+															</field>
+														</menu>
+													</menuEntry-array>
+												</field>
+											</menu>
+											<menu>
+												<field name="label">
+													<String>Wrap / unwrap</String>
+												</field>
+												<field name="accessKey">
+													<String>w</String>
+												</field>
+												<field name="iconPath">
+													<String></String>
+												</field>
+												<field name="menuEntriesDescriptorList">
+													<menuEntry-array>
+														<menuItem>
+															<field name="actionID">
+																<String>unwrap</String>
+															</field>
+														</menuItem>
+														<menuSeparator/>
+														<menuItem>
+															<field name="actionID">
+																<String>surround_with_div</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
+																<String>surround_with_prodnote</String>
+															</field>
+														</menuItem>
+													</menuEntry-array>
+												</field>
+											</menu>
+											<menu>
+												<field name="label">
+													<String>Insert</String>
+												</field>
+												<field name="accessKey">
+													<String>i</String>
+												</field>
+												<field name="iconPath">
+													<String></String>
+												</field>
+												<field name="menuEntriesDescriptorList">
+													<menuEntry-array>
+														<menuItem>
+															<field name="actionID">
+																<String>add_imggroup</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
+																<String>insert_image</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
+																<String>insert_pagenum</String>
+															</field>
+														</menuItem>
+													</menuEntry-array>
+												</field>
+											</menu>
+										</menuEntry-array>
+									</field>
+								</menu>
+							</field>
+							<field name="toolbarDescriptor">
+								<toolbar>
+									<field name="id">
+										<String>Toolbar</String>
+									</field>
+									<field name="type">
+										<Integer>2</Integer>
+									</field>
+									<field name="largeIconPath">
+										<null/>
+									</field>
+									<field name="smallIconPath">
+										<null/>
+									</field>
+									<field name="toolbarEntriesDescriptorList">
+										<toolbarEntry-array/>
+									</field>
+								</toolbar>
+							</field>
+							<field name="additionalToolbarsDescriptors">
+								<null/>
+							</field>
+							<field name="contextualItems">
+								<contextProvider>
+									<field name="items">
+										<contextItem-array/>
+									</field>
+									<field name="removeItems">
+										<null/>
+									</field>
+								</contextProvider>
+							</field>
+							<field name="tableSupportClassName">
+								<null/>
+							</field>
+							<field name="tableColWidthSupportClassName">
+								<null/>
+							</field>
+							<field name="customReferencesResolver">
+								<null/>
+							</field>
+							<field name="authorExtensionStateListener">
+								<null/>
+							</field>
+							<field name="attributesRecognizer">
+								<null/>
+							</field>
+						</authorExtension>
+					</field>
+					<field name="templatesLocations">
+						<String-array/>
+					</field>
+					<field name="xmlCatalogs">
+						<String-array/>
+					</field>
+					<field name="description">
+						<String>Daisy Digital Talking Book. Contains both 2005 - 2 and 2005 - 3 as defined in NISO Z39.86-2005</String>
+					</field>
+					<field name="doctypeRules">
+						<documentTypeRule-array>
+							<documentTypeRule>
+								<field name="namespace">
+									<String>*</String>
+								</field>
+								<field name="rootElem">
+									<String>dtbook</String>
+								</field>
+								<field name="fileName">
+									<String>*</String>
+								</field>
+								<field name="publicID">
+									<String>*</String>
+								</field>
+								<field name="javaRuleClass">
+									<String></String>
+								</field>
+								<field name="attributeLocalName">
+									<String>version</String>
+								</field>
+								<field name="attributeNamespace">
+									<String>*</String>
+								</field>
+								<field name="attributeValue">
+									<String>2005-3</String>
+								</field>
+							</documentTypeRule>
+							<documentTypeRule>
+								<field name="namespace">
+									<String>*</String>
+								</field>
+								<field name="rootElem">
+									<String>*</String>
+								</field>
+								<field name="fileName">
+									<String>*</String>
+								</field>
+								<field name="publicID">
+									<String>*-//NISO//DTD dtbook 2005-3//EN</String>
+								</field>
+								<field name="javaRuleClass">
+									<String></String>
+								</field>
+								<field name="attributeLocalName">
+									<String>*</String>
+								</field>
+								<field name="attributeNamespace">
+									<String>*</String>
+								</field>
+								<field name="attributeValue">
+									<String>*</String>
+								</field>
+							</documentTypeRule>
+							<documentTypeRule>
+								<field name="namespace">
+									<String>*</String>
+								</field>
+								<field name="rootElem">
+									<String>dtbook</String>
+								</field>
+								<field name="fileName">
+									<String>*</String>
+								</field>
+								<field name="publicID">
+									<String>*</String>
+								</field>
+								<field name="javaRuleClass">
+									<String></String>
+								</field>
+								<field name="attributeLocalName">
+									<String>version</String>
+								</field>
+								<field name="attributeNamespace">
+									<String>*</String>
+								</field>
+								<field name="attributeValue">
+									<String>2005-2</String>
+								</field>
+							</documentTypeRule>
+							<documentTypeRule>
+								<field name="namespace">
+									<String>*</String>
+								</field>
+								<field name="rootElem">
+									<String>*</String>
+								</field>
+								<field name="fileName">
+									<String>*</String>
+								</field>
+								<field name="publicID">
+									<String>*-//NISO//DTD dtbook 2005-2//EN</String>
+								</field>
+								<field name="javaRuleClass">
+									<String></String>
+								</field>
+								<field name="attributeLocalName">
+									<String>*</String>
+								</field>
+								<field name="attributeNamespace">
+									<String>*</String>
+								</field>
+								<field name="attributeValue">
+									<String>*</String>
+								</field>
+							</documentTypeRule>
+						</documentTypeRule-array>
+					</field>
+					<field name="scenarios">
+						<scenario-array/>
+					</field>
+					<field name="validationScenarios">
+						<validationScenario-array/>
+					</field>
+					<field name="defaultValidationScenarios">
+						<null/>
+					</field>
+					<field name="defaultTransformationScenarios">
+						<null/>
+					</field>
+					<field name="extensionsBundleClassName">
+						<null/>
+					</field>
+					<field name="useImposedInitialPage">
+						<Boolean>false</Boolean>
+					</field>
+					<field name="imposedInitialPage">
+						<String>Text</String>
+					</field>
+					<field name="elementLocatorExtension">
+						<null/>
+					</field>
+					<field name="schemaManagerFilterExtension">
+						<null/>
+					</field>
+					<field name="authorSWTDndExtension">
+						<null/>
+					</field>
+					<field name="textSWTDndExtension">
+						<null/>
+					</field>
+					<field name="authorSwingDndExtension">
+						<null/>
+					</field>
+					<field name="cssStylesFilterExtension">
+						<null/>
+					</field>
+					<field name="attributesValueEditor">
+						<null/>
+					</field>
+					<field name="priority">
+						<Integer>5</Integer>
+					</field>
+					<field name="xmlNodeCustomizerExtension">
+						<null/>
+					</field>
+					<field name="externalObjectInsertionHandler">
+						<String>dtBookTools.dndActions.ImageDnd</String>
+					</field>
+					<field name="customAttributeValueEditor">
+						<null/>
+					</field>
+				</documentTypeDescriptor>
+			</documentTypeDescriptor-array>
+		</entry>
+	</map>
+</serialized>
